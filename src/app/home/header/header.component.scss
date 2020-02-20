@@ -1,0 +1,11 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(58, 150, 151);
+  &__text {
+    margin: 0 0 0 2rem;
+  }
+  &__padding {
+    padding: 1rem 0;
+  }
+}

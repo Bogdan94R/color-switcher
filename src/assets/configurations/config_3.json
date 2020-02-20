@@ -1,0 +1,20 @@
+{
+    "name": "Homer",
+    "graphic": {
+        "colorSelection": [
+            {
+                "name": "blue",
+                "color": "#083D77"
+            }, {
+                "name": "orange",
+                "color": "#E9724C"
+            }
+        ],
+        "borderColor" : "#FCA635" 
+    },
+    "input": {
+        "min": -100,
+        "max": 100,
+        "default": 0
+    }
+}

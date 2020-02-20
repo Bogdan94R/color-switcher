@@ -1,0 +1,25 @@
+{
+    "name": "Station 1",
+    "graphic": {
+        "colorSelection": [
+            {
+                "name": "yellow",
+                "color": "#FCA635"
+            },
+            {
+                "name": "red",
+                "color": "#D13C44"
+            },
+            {
+                "name": "green",
+                "color": "#79B473"
+            }
+        ],
+        "borderColor" : "#000000" 
+    },
+    "input": {
+        "min": 0,
+        "max": 100,
+        "default": 5
+    }
+}

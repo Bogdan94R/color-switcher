@@ -1,0 +1,66 @@
+<div class="content">
+  <section class="main-app">
+    <app-header
+      (selectedFileName)="onSelectedFileName($event)"
+      [files]="appConfigurationFiles"
+    ></app-header>
+    <ng-container *ngIf="appConfiguration && !isColorSelectionError; else existingJSONConfig">
+    <div class="main-content main-content__padding">
+      <h3 class="title">{{appConfiguration?.name}}</h3>
+      <div
+        [ngStyle]="getStylesForSquare"
+        class="square">
+      </div>
+      <ul class="colors colors__margin">
+        <li
+          class="colors__item"
+          (click)="selectColor(color)"
+          [ngClass]="{'colors__item--active': color.selected}"
+          *ngFor="let color of colors">
+          {{color?.name}}
+        </li>
+      </ul>
+      <div class="number-section">
+        <h4 class="number-section__title">Number</h4>
+        <div class="row row__margin">
+          <div class="small-content">
+            <input
+             class="number-section__input"
+             type="number"
+             (ngModelChange)="checkLimitState($event)"
+             [(ngModel)]="inputNumber">
+          </div>
+          <div class="large-content">
+            <button
+             class="reset-button"
+             (click)="onReset()">
+              Reset
+            </button>
+          </div>
+        </div>
+        <div class="row row__margin">
+          <div class="large-content large-content__flex">
+            <span class="number-square">Number * 2:</span>
+          </div>
+          <div class="small-content">
+            <div class="result-block" [ngClass]="{'result-block--error': isLimitError}">
+              <span class="result">{{ multipliedByTwoNumber(inputNumber) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </ng-container>
+  </section>
+</div>
+
+<ng-template #existingJSONConfig>
+  <div class="existing-config">
+    <p *ngIf="!isColorSelectionError">
+      Select the configuration file in source to configure the application.
+    </p>
+    <p class="error" *ngIf="isColorSelectionError">
+      Color Selection is empty in your configuration.
+    </p>
+  </div>
+</ng-template>

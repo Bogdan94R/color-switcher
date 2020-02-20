@@ -1,0 +1,22 @@
+<div
+   class="background"
+    [ngClass]="{'background--open': isOpen}"
+    (click)="onToggleDropDown()"></div>
+<div class="dropdown dropdown__margin">
+  <button
+     class="dropdown__button"
+     (click)="onToggleDropDown()">
+    {{fileName | titlecase}}
+    <i class="fa fa-caret-down dropdown__arrow"></i>
+  </button>
+  <ul class="select-file"
+      [ngClass]="{'select-file--open': isOpen}">
+    <li
+      class="select-file__item"
+      [ngClass]="{'select-file__item--active': file.selected}"
+      (click)="onSelectElement(file)"
+      *ngFor="let file of fileObjects" [value]="file.name">
+      {{file.name | titlecase}}
+    </li>
+  </ul>
+</div>

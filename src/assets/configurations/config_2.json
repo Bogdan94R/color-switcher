@@ -1,0 +1,26 @@
+{
+    "name": "Regensburg",
+    "graphic": {
+        "colorSelection": [
+            {
+                "name": "black",
+                "color": "#000000"
+            }, {
+                "name": "white",
+                "color": "#FFFFFF"
+            }, {
+                "name": "darkgrey",
+                "color": "#363537"
+            }, {
+                "name": "lightgrey",
+                "color": "#E8E8E8"
+            }
+        ],
+        "borderColor" : "#6B2D5C"
+    },
+    "input": {
+        "min": 0,
+        "max": 1000,
+        "default": 50
+    }
+}
